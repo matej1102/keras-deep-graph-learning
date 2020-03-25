@@ -4,9 +4,8 @@ from keras import Sequential
 from keras.layers import Dropout, Activation
 from keras.optimizers import Adam
 
-
+import examples.utils
 from definitionsV4 import generate_networkx_graphs
-from examples.utils import *
 from keras_dgl.layers import GraphCNN
 
 last_iteration = 0
@@ -33,9 +32,9 @@ print(A)
 print(Y)
 
 SYM_NORM = True
-A_norm = preprocess_adj_numpy(A, SYM_NORM)
+A_norm = examples.utils.preprocess_adj_numpy(A, SYM_NORM)
 num_filters = 2
-graph_conv_filters = np.concatenate([A_norm, np.matmul(A_norm, A_norm)], axis=0)
+graph_conv_filters = examples.utils.np.concatenate([A_norm, examples.utils.np.matmul(A_norm, A_norm)], axis=0)
 graph_conv_filters = K.constant(graph_conv_filters)
 
 model = Sequential()
