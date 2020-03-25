@@ -1,8 +1,7 @@
-import  numpy as np
 from scipy.spatial.distance import *
 
 from graph_nets import utils_np
-from examples.initialization import *
+from initialization import *
 
 
 def compute_jaccard_accuracyTest(target, output, iteration, index, test_values, last_iteration,iteration_count, use_nodes=True, use_edges=False):
