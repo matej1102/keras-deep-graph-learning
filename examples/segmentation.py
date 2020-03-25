@@ -4,7 +4,7 @@ from keras import Sequential
 from keras.layers import Dropout, Activation
 from keras.optimizers import Adam
 
-from examples.accuracy import *
+
 from examples.definitionsV4 import generate_networkx_graphs
 from examples.utils import *
 from keras_dgl.layers import GraphCNN
