@@ -6,6 +6,7 @@ from keras.optimizers import Adam
 
 import examples.utils
 from definitionsV4 import generate_networkx_graphs
+from initialization import *
 from keras_dgl.layers import GraphCNN
 
 last_iteration = 0
@@ -26,8 +27,11 @@ best_test_loss = 9999
 
 
 input_graphs, target_graphs  = generate_networkx_graphs(rand, batch_size_tr, num_nodes_min_max_tr, theta, True)
-A=networkx.convert_matrix.to_numpy_array(input_graphs);
-Y= networkx.convert_matrix.to_numpy_array(target_graphs);
+A=[]
+Y=[]
+for index in range(len(input_graphs)):
+        A.append(networkx.convert_matrix.to_numpy_array(input_graphs[index]))
+        Y.append(networkx.convert_matrix.to_numpy_array(target_graphs[index]))
 print(A)
 print(Y)
 
