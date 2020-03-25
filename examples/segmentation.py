@@ -1,16 +1,10 @@
+import keras.backend as K
 import networkx
 from keras import Sequential
 from keras.layers import Dropout, Activation
-import keras.backend as K
 from keras.optimizers import Adam
 
-from examples.definitionsV4 import *
-from examples.initialization import *
 from examples.accuracy import *
-import os
-
-from node2vec import Node2Vec
-
 from examples.definitionsV4 import generate_networkx_graphs
 from examples.utils import *
 from keras_dgl.layers import GraphCNN
